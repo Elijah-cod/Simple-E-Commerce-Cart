@@ -6,6 +6,7 @@ function ShoppingCart () {
     return(
         <div className='icon'>
             <FontAwesomeIcon icon={faCartShopping} />
+            <span>2</span>
         </div>
     )
 }
