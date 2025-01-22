@@ -1,6 +1,8 @@
-
-function ShoppingItems({products}) {
-    console.log(products)
+import { useState } from "react"
+function ShoppingItems({products, setCount}) {
+    function addItems() {
+        setCount(count=>count+1)
+    }
     return (
         <div className="products" >
         {
@@ -8,12 +10,11 @@ function ShoppingItems({products}) {
                 <div className="item" key={product.id}>
                     <h3>{product.name}</h3>
                     <p>${product.price}</p>
-                    <button>Add</button>
+                    <button onClick={addItems}>Add</button>
                 </div>
             )
         }
         </div>
     )
 }
-
 export default ShoppingItems
