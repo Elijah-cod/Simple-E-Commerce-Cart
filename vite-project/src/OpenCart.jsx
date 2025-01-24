@@ -5,9 +5,9 @@ function OpenCart ({cart}) {
             <h2>Cart</h2>
             <ol>
                 {
-                    cart.map((item)=>{
-                        <li key={item.id}>{item.name}</li>
-                    })
+                    cart.map((item)=>(
+                        <li key={item.id}>Item: {item.name} Price: $ {item.price} Quantity: {item.quantity}</li>
+                    ))
                 }
             </ol>
         </>
