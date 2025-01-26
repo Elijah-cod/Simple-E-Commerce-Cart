@@ -1,4 +1,4 @@
-function OpenCart ({cart}) {
+function OpenCart ({cart, total}) {
     console.log(cart)
     return(
         <>
@@ -10,6 +10,7 @@ function OpenCart ({cart}) {
                     ))
                 }
             </ol>
+            <h2>Total: ${total}</h2>
         </>
     )
 }

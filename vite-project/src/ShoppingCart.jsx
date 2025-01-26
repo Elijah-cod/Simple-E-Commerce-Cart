@@ -4,7 +4,7 @@ import OpenCart from './OpenCart';
 import { useState } from 'react';
 
 
-function ShoppingCart ({count, cart}) {
+function ShoppingCart ({count, cart, total}) {
     const [isCartOpen, setIsCartOpen] = useState(false); // State to control visibility of OpenCart
     function toggleCartVisibility() {
         setIsCartOpen((prev) => !prev); // Toggle the visibility state
@@ -13,7 +13,7 @@ function ShoppingCart ({count, cart}) {
         <div className='icon'>
             <FontAwesomeIcon onClick={toggleCartVisibility} icon={faCartShopping}/>
             <span>{count}</span>
-            {isCartOpen && <OpenCart cart={cart} />}
+            {isCartOpen && <OpenCart cart={cart} total={total}/>}
         </div>
     )
 }

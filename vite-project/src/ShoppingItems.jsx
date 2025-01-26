@@ -1,7 +1,10 @@
-function ShoppingItems({ products, setCount, setCart }) {
-
+import { useState } from "react";
+function ShoppingItems({ products, setCount, setCart, setTotal }) {
     function addItems(product) {
         setCount((count) => count + 1);
+
+        setTotal((prevTotal) => prevTotal + product.price);
+
 
         setCart((cart) => {
             // Check if the product already exists in the cart

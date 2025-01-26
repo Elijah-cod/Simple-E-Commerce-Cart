@@ -4,16 +4,17 @@ import Header from './Header'
 import ShoppingItems from './ShoppingItems'
 import ShoppingCart from './ShoppingCart'
 import { useState } from 'react'
-import OpenCart from './OpenCart'
 
 function App() {
   const [count, setCount] = useState(0)
   const [cart, setCart] = useState([]);
+  const [total, setTotal] = useState(0)
+
   return (
     <>
       <Header />
-      <ShoppingItems products={products} setCount={setCount} setCart={setCart}/>
-      <ShoppingCart count={count} cart={cart}/>
+      <ShoppingItems products={products} setCount={setCount} setCart={setCart} setTotal={setTotal}/>
+      <ShoppingCart count={count} cart={cart} total={total}/>
     </>
     
   )
