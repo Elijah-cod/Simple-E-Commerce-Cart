@@ -14,7 +14,7 @@ function App() {
     <>
       <Header />
       <ShoppingItems products={products} setCount={setCount} setCart={setCart} setTotal={setTotal}/>
-      <ShoppingCart count={count} cart={cart} total={total} setCart={setCart}/>
+      <ShoppingCart count={count} cart={cart} total={total} setCart={setCart} setTotal={setTotal}/>
     </>
     
   )

@@ -1,12 +1,13 @@
 import { faX } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-function OpenCart ({cart, total, setCart}) {
+function OpenCart ({cart, total, setCart, setTotal}) {
     function removeItem(id) {
         console.log(id)
         const updatedData = cart
-                .map(item => {
+                .map(item => { //We had to first remove the quantity of the item before removing it in the cart
                     if (item.id === id) {
+                        setTotal((prevTotal)=>prevTotal-item.price)
                     return { ...item, quantity: item.quantity - 1 }; // Reduce quantity by 1
                     }
                     return item;
