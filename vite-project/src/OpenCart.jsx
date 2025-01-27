@@ -2,8 +2,12 @@ import { faX } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function OpenCart ({cart, total, setCart, setTotal}) {
+    function sortItems() {
+        const sortedCart = [...cart].sort((item1, item2) => item1.name.localeCompare(item2.name));
+        console.log("After Sort", sortedCart);
+        setCart(sortedCart); // Set a new array to trigger a re-render
+    }    
     function removeItem(id) {
-        console.log(id)
         const updatedData = cart
                 .map(item => { //We had to first remove the quantity of the item before removing it in the cart
                     if (item.id === id) {
@@ -15,7 +19,6 @@ function OpenCart ({cart, total, setCart, setTotal}) {
                 .filter(item => item.quantity > 0); // Remove items with quantity <= 0
 
                 setCart(updatedData)
-        console.log(cart);
     }
     return(
         <>
@@ -27,6 +30,7 @@ function OpenCart ({cart, total, setCart, setTotal}) {
                     ))
                 }
             </ol>
+            <button className="sort" onClick={sortItems} type="button">Sort</button>
             <h2>Total: ${total}</h2>
         </>
     )
