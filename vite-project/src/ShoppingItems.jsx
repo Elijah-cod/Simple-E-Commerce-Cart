@@ -1,4 +1,3 @@
-import { useState } from "react";
 function ShoppingItems({ products, setCount, setCart, setTotal }) {
     function addItems(product) {
         setCount((count) => count + 1);
