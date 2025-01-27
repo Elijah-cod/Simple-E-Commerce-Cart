@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 function OpenCart ({cart, total, setCart, setTotal}) {
     function sortItems() {
         const sortedCart = [...cart].sort((item1, item2) => item1.name.localeCompare(item2.name));
-        console.log("After Sort", sortedCart);
         setCart(sortedCart); // Set a new array to trigger a re-render
     }    
     function removeItem(id) {
